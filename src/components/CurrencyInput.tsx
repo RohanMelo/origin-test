@@ -11,9 +11,7 @@ export default function CurrencyInput(): JSX.Element {
   };
   return (
     <div className="flex flex-col w-full sm:w-7/12">
-      <p className="text-textprimary text-[12px] sm:text-sm mb-1">
-        Total amount
-      </p>
+      <p className="text-[12px] sm:text-sm mb-1">Total amount</p>
       <div className="flex custom-border px-5 py-1 h-14 ">
         <img
           src={ICONS.dollarSign}

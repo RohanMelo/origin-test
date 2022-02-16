@@ -2,13 +2,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { GoalType } from '../../types/goaltype';
 import dayjs from 'dayjs';
 import ICONS from '../../styles/icons';
-import currencyFormat from '../../utils/currencyFormat';
+import { formatToLocale, stringToNumber } from '../../utils/currencyUtils';
 
 export interface GoalState {
   selectedGoal: GoalType;
   amount: string;
   reachDate: dayjs.Dayjs;
+  initialDate: dayjs.Dayjs;
   monthDiff: number;
+  monthlyAmount: number;
+  currencySymbol: string;
 }
 
 const initialDate = dayjs().add(1, 'month');
@@ -19,9 +22,12 @@ const initialState: GoalState = {
     title: 'buy a house',
     icon: ICONS.houseIcon,
   },
-  amount: '20.000,00',
+  amount: '10.000',
   reachDate: initialDate,
+  initialDate,
   monthDiff: 1,
+  monthlyAmount: 5000,
+  currencySymbol: '$',
 };
 
 // It's okay to mutate state here because of the Immer library
@@ -32,18 +38,27 @@ export const goalSlice = createSlice({
     incrementDate: (state) => {
       state.reachDate = dayjs(state.reachDate).add(1, 'month');
       state.monthDiff += 1;
+
+      const numberAmount = stringToNumber(state.amount);
+      state.monthlyAmount = +(numberAmount / state.monthDiff).toFixed(2);
     },
     decrementDate: (state) => {
       // already checks for month and year
-      if (dayjs().isSame(state.reachDate, 'month')) {
+      if (dayjs(state.initialDate).isSame(state.reachDate, 'month')) {
         return;
       }
       state.reachDate = dayjs(state.reachDate).subtract(1, 'month');
       state.monthDiff -= 1;
+
+      const numberAmount = stringToNumber(state.amount);
+      state.monthlyAmount = +(numberAmount / state.monthDiff).toFixed(2);
     },
     setAmount: (state, action: PayloadAction<string>) => {
-      const formatted = currencyFormat(action.payload);
-      state.amount = formatted;
+      const numberAmount = stringToNumber(action.payload);
+      const stringAmount = formatToLocale(numberAmount);
+      const monthlyAmount = +(numberAmount / state.monthDiff).toFixed(2);
+      state.amount = stringAmount;
+      state.monthlyAmount = monthlyAmount;
     },
   },
 });

@@ -19,10 +19,12 @@ export default function GoalCard(): JSX.Element {
           />
         </div>
         <div className="flex flex-col ml-4">
-          <h3 className="text-lg text-textprimary font-rubik capitalize">
+          <h3 className="text-xl sm:text-2xl font-rubik capitalize">
             {selectedGoal.title}
           </h3>
-          <p className="text-maingray capitalize">{selectedGoal.goalKind}</p>
+          <p className="text-maingray capitalize text-[14px] sm:text-[16px]">
+            {selectedGoal.goalKind}
+          </p>
         </div>
       </div>
       <div className="flex flex-col sm:flex-row items-center gap-y-4 sm:gap-y-0 gap-x-4 pb-6">
@@ -30,7 +32,7 @@ export default function GoalCard(): JSX.Element {
         <DatePicker />
       </div>
       <DepositsCard />
-      <div className="flex justify-center pt-6">
+      <div className="flex justify-center">
         <Button text={'Confirm'} />
       </div>
     </div>
