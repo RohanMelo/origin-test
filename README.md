@@ -7,7 +7,7 @@
 - Cypress + Jest
 - Dayjs
 
-To run Cypress tests -
+### To run Cypress tests
 
 ```bash
 yarn run cypress open
