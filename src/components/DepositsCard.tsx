@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 
+import { formatToLocale } from '../utils/currencyUtils';
 import { useAppSelector } from '../store/hooks/hooks';
 
 export default function DepositsCard(): JSX.Element {
@@ -15,7 +16,7 @@ export default function DepositsCard(): JSX.Element {
           data-cy="deposits-amount"
         >
           {currencySymbol}
-          {monthlyAmount}
+          {formatToLocale(monthlyAmount)}
         </h3>
       </div>
       <div className="flex items-center text-center sm:text-left h-full sm:h-[80px] bg-backgroundprimary p-6">

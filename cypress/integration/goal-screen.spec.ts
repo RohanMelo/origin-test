@@ -6,7 +6,7 @@ const initialValues = {
   monthlyAmount: 10000,
   datePickerMonth: 'March',
   datePickerYear: '2022',
-  depositsAmount: '$10000',
+  depositsAmount: '$10,000',
   depositsDescQt: '1 monthly deposit',
 };
 
@@ -123,7 +123,7 @@ describe('Goal screen redux and functionality', () => {
 
     cy.getByTestId('deposits-amount')
       .should('be.visible')
-      .and('contain', initialValues.monthlyAmount);
+      .and('contain', initialValues.depositsAmount);
   });
 
   it('Should be able to increase Date and see correct values', () => {
@@ -133,7 +133,7 @@ describe('Goal screen redux and functionality', () => {
 
     cy.getByTestId('deposits-amount')
       .should('be.visible')
-      .and('contain', '$5000');
+      .and('contain', '$5,000');
   });
 
   it('Should be able to increment and decrement dates using arrow keys', () => {
@@ -145,7 +145,7 @@ describe('Goal screen redux and functionality', () => {
 
     cy.getByTestId('deposits-amount')
       .should('be.visible')
-      .and('contain', '$3333.33');
+      .and('contain', '$3,333.33');
 
     cy.getByTestId('datepicker-focusable').focus().type('{leftArrow}');
 
@@ -154,7 +154,7 @@ describe('Goal screen redux and functionality', () => {
 
     cy.getByTestId('deposits-amount')
       .should('be.visible')
-      .and('contain', '$5000');
+      .and('contain', '$5,000');
   });
 
   it('Should be able to change amount in currency input', () => {
@@ -165,11 +165,11 @@ describe('Goal screen redux and functionality', () => {
 
     cy.getByTestId('currency-input').type('50567');
     cy.getStore('goal').its('amount').should('equal', '50,567');
-    cy.getByTestId('deposits-amount').contains('$50567');
+    cy.getByTestId('deposits-amount').contains('$50,567');
     cy.getByTestId('deposits-desc-amount').contains('$50,567');
 
     cy.getByTestId('datepicker-increment').click();
-    cy.getByTestId('deposits-amount').contains('$25283.5');
+    cy.getByTestId('deposits-amount').contains('$25,283.5');
     cy.getByTestId('deposits-desc-amount').contains('$50,567');
   });
 });
