@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
+
 import { useAppSelector, useAppDispatch } from '../store/hooks/hooks';
 import { incrementDate, decrementDate } from '../store/slices/goalSlice';
 import ICONS from '../styles/icons';
@@ -37,13 +38,17 @@ export default function DatePicker(): JSX.Element {
     }
   };
   return (
-    <div className="flex flex-col w-full sm:w-5/12">
+    <div
+      className="flex flex-col w-full sm:w-5/12"
+      data-cy="datepicker-container"
+    >
       <p className="text-[12px] sm:text-sm mb-1">Reach goal by</p>
 
       <div
         className="flex justify-between custom-border h-14 px-5 py-1 focus:outline-0"
         tabIndex={0}
         onKeyDown={(e) => onKeyDown(e.key)}
+        data-cy="datepicker-focusable"
       >
         <img
           src={ICONS.arrowIcon}
@@ -54,10 +59,15 @@ export default function DatePicker(): JSX.Element {
           onClick={() => handleDecrement()}
           width="8"
           height="14"
+          data-cy="datepicker-decrement"
         />
         <div className="flex flex-col justify-center mr-1 text-[14px] sm:text-[16px] text-center leading-tight">
-          <p className="font-semibold">{dayjs(reachDate).format('MMMM')}</p>
-          <p className="text-maingray">{dayjs(reachDate).format('YYYY')}</p>
+          <p className="font-semibold" data-cy="datepicker-month-text">
+            {dayjs(reachDate).format('MMMM')}
+          </p>
+          <p className="text-maingray" data-cy="datepicker-year-text">
+            {dayjs(reachDate).format('YYYY')}
+          </p>
         </div>
         <img
           src={ICONS.arrowIcon}
@@ -66,6 +76,7 @@ export default function DatePicker(): JSX.Element {
           onClick={() => handleIncrement()}
           width="8"
           height="14"
+          data-cy="datepicker-increment"
         />
       </div>
     </div>

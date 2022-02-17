@@ -411,6 +411,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 248 250 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(30 42 50 / var(--tw-text-opacity));
+}
 .custom-border {
   border-radius: 0.25rem;
   border-width: 1px;
@@ -424,21 +430,6 @@ Ensure the default browser behavior of the `hidden` attribute.
       height: 24px;
     }
   }
-.visible {
-  visibility: visible;
-}
-.invisible {
-  visibility: hidden;
-}
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
-.-z-10 {
-  z-index: -10;
-}
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -459,9 +450,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .flex {
   display: flex;
-}
-.hidden {
-  display: none;
 }
 .h-full {
   height: 100%;
@@ -528,13 +516,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded {
   border-radius: 0.25rem;
 }
-.bg-backgroundprimary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 248 250 / var(--tw-bg-opacity));
-}
 .bg-brandprimary {
   --tw-bg-opacity: 1;
   background-color: rgb(27 49 168 / var(--tw-bg-opacity));
+}
+.bg-backgroundprimary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 248 250 / var(--tw-bg-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -607,10 +595,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .leading-tight {
   line-height: 1.25;
 }
-.text-textprimary {
-  --tw-text-opacity: 1;
-  color: rgb(30 42 50 / var(--tw-text-opacity));
-}
 .text-brandprimary {
   --tw-text-opacity: 1;
   color: rgb(27 49 168 / var(--tw-text-opacity));
@@ -636,14 +620,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.outline-hidden {
-  outline-style: hidden;
-}
 .outline-0 {
   outline-width: 0px;
-}
-.focus\:outline-hidden:focus {
-  outline-style: hidden;
 }
 .focus\:outline-0:focus {
   outline-width: 0px;

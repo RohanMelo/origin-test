@@ -10,6 +10,7 @@ export default function Navbar(): JSX.Element {
           className="responsive-logo"
           height="32"
           width="100"
+          data-cy="nav-logo"
         />
       </div>
     </div>

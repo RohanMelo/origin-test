@@ -19,12 +19,14 @@ export default function CurrencyInput(): JSX.Element {
           className="mr-1"
           width="14"
           height="16"
+          data-cy="currency-input-icon"
         />
         <input
           type="text"
           value={amount}
           onChange={(event) => handleChange(event.target.value)}
           className="text-intermediarygray font-rubik outline-0 appearance-none"
+          data-cy="currency-input"
         />
       </div>
     </div>

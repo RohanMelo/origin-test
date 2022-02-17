@@ -12,3 +12,9 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+// @ts-ignore
+if (window.Cypress) {
+  // @ts-ignore
+  window.store = store;
+}

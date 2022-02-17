@@ -7,7 +7,10 @@ export function App(): JSX.Element {
   return (
     <div className="flex flex-col items-center h-full mb-16 sm:mb-24">
       <div className="pt-8 sm:pt-12 pb-6">
-        <p className="text-brandprimary text-lg sm:text-xl">
+        <p
+          className="text-brandprimary text-lg sm:text-xl"
+          data-cy="plan-goal-text"
+        >
           Let&apos;s plan your
           <span className="font-semibold"> {selectedGoal.goalKind}.</span>
         </p>

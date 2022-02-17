@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { GoalType } from '../../types/goaltype';
 import dayjs from 'dayjs';
+
+import { GoalType } from '../../types/goaltype';
 import ICONS from '../../styles/icons';
 import { formatToLocale, stringToNumber } from '../../utils/currencyUtils';
 
@@ -22,11 +23,11 @@ const initialState: GoalState = {
     title: 'buy a house',
     icon: ICONS.houseIcon,
   },
-  amount: '10.000',
+  amount: '10,000',
   reachDate: initialDate,
   initialDate,
   monthDiff: 1,
-  monthlyAmount: 5000,
+  monthlyAmount: 10000,
   currencySymbol: '$',
 };
 
