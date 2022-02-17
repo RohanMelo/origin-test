@@ -1,5 +1,18 @@
 # Origin Frontend Take-Home Assignment
 
+### Stack
+
+- Redux
+- TailwindCSS
+- Cypress + Jest
+- Dayjs
+
+To run Cypress tests -
+
+```bash
+yarn run cypress open
+```
+
 **IMPORTANT**: you can choose any technology stack to implement this assignment. Using our stack is not a requirement in the selection process - we will consider exclusively the quality of your project (technology and product-wise) to evaluate your work. We've added a project structure in this repository (a buildwith react, redux, jest, styled-components and typescript) to save you time if you want to use it. If you prefer another stack, feel free to use it.
 
 Origin is a platform that helps our customers' employees put their financial lives on track.
@@ -20,13 +33,16 @@ When the users change the value of any of the inputs, the monthly deposit value 
 # Development Instructions
 
 ### Evaluation
+
 Be aware that Origin will mainly take into consideration the following evaluation criteria:
-* How close your page is to the mockups, both on mobile & desktop;
-* How clean and organized your code is;
-* How good your automated tests are, i.e.: qualitative over quantitative (in case of usage of this base project, feel free to choose between jest or testing library);
-* If you implemented the business rules correctly.
+
+- How close your page is to the mockups, both on mobile & desktop;
+- How clean and organized your code is;
+- How good your automated tests are, i.e.: qualitative over quantitative (in case of usage of this base project, feel free to choose between jest or testing library);
+- If you implemented the business rules correctly.
 
 ### Assets
+
 You can find the layout mockups here on our Figma project:
 [Layout mockups](https://www.figma.com/file/Axdg0WSJURcxp8Arq3gg9x/Take-Home-Assignment-v2)
 
@@ -60,6 +76,7 @@ Don't create a fork, send us the link to your repository and make sure to make i
 # Usage
 
 This project requires the latest LTS version of NodeJS and you may need to install the yarn as global dependency
+
 ```bash
 npm install -g yarn
 ```
